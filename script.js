@@ -1,7 +1,5 @@
 
 
-
-
 const input = document.getElementById('input');
 const buttons = document.querySelectorAll('button');
 
