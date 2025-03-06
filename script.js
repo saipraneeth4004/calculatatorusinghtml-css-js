@@ -5,7 +5,6 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const buttonValue = button.textContent;
-
         if (buttonValue === 'AC') {
             input.value = '';
         } else if (buttonValue === 'DEL') {
