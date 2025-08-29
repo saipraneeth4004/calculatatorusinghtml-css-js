@@ -9,7 +9,13 @@ buttons.forEach(button => {
         if (buttonValue === 'AC') {
             input.value = '';
         } else if (buttonValue === 'DEL') {
+
+
+
+            
             input.value = input.value.slice(0, -1);
+
+            
         } else if (buttonValue === '=') {
             try {
                 input.value = eval(input.value);
