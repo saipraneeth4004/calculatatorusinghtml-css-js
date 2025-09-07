@@ -2,7 +2,6 @@
 
 const input = document.getElementById('input');
 const buttons = document.querySelectorAll('button');
-
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const buttonValue = button.textContent;
