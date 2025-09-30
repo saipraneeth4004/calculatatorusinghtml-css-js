@@ -1,28 +1,27 @@
-
-
 const input = document.getElementById('input');
 const buttons = document.querySelectorAll('button');
+
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-        const buttonValue = button.textContent;
-        if (buttonValue === 'AC') {
-            input.value = '';
-        } else if (buttonValue === 'DEL') {
+        const value = button.textContent;
 
-
-
-            
-            input.value = input.value.slice(0, -1);
-
-            
-        } else if (buttonValue === '=') {
-            try {
-                input.value = eval(input.value);
-            } catch (error) {
-                input.value = 'Error';
-            }
-        } else {
-            input.value += buttonValue;
+        switch (value) {
+            case 'AC':
+                input.value = '';
+                break;
+            case 'DEL':
+                input.value = input.value.slice(0, -1);
+                break;
+            case '=':
+                try {
+                    // Using Function constructor instead of eval for slightly safer evaluation
+                    input.value = new Function(`return ${input.value}`)();
+                } catch {
+                    input.value = 'Error';
+                }
+                break;
+            default:
+                input.value += value;
         }
     });
 });
